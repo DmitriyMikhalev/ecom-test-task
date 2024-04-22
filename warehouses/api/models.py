@@ -56,13 +56,13 @@ class Equipment(mixins.CreatedUpdatedMixin, models.Model):
     )
     stock = models.ForeignKey(
         verbose_name=_('Склад'),
-        to='api.Stock',
+        to=Stock,
         on_delete=models.CASCADE,
         related_name='equipments'
     )
     category = models.ForeignKey(
         verbose_name=_('Категория'),
-        to='api.Category',
+        to=Category,
         on_delete=models.CASCADE,
         related_name='equipments'
     )

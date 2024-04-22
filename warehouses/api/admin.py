@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . import models, mixins, inlines
+from . import inlines, mixins, models
 
 
 @admin.register(models.Category)
@@ -26,7 +26,7 @@ class EquipmentAdmin(mixins.AdminPageLimit, admin.ModelAdmin):
     )
     list_filter = (
         'category__title',
-        'user__username',
+        'user__email',
     )
     list_display_links = (
         'title',
